@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="sidebar.css">
 </head>
 <body>
-    <!-- <button id="sidebar-toggle">Toggle Sidebar</button> -->
 
     <div class="side-bar" id="sidebar">
         <div class="sidebar-header">
@@ -15,8 +14,8 @@
         </div>
         <ul class="sidebarMenu">
             <li><a href="#" class="menu-item">Menu Item 1</a>
-                <ul class="menu-itme sub">
-                    <li>sub item</li>
+                <ul class="sub-item">
+                    <li class="sub">sub item1</li>
                 </ul>
             </li>
             <li><a href="#" class="menu-item">Menu Item 2</a></li>
@@ -30,18 +29,23 @@
         <h1>Main입니다</h1>
         <p>This is the main content area.</p>
     </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var sidebarToggle = document.getElementById('sidebar-toggle');
             var sidebar = document.getElementById('sidebar');
             var content = document.getElementById('content');
 
-            sidebarToggle.addEventListener('click', function() {
-                sidebar.classList.toggle('sidebar-open');
-                content.classList.toggle('content-open');
+            sidebar.addEventListener('mouseenter', function() {
+                sidebar.classList.add('sidebar-open');
+                content.classList.add('content-open');
+            });
+
+            sidebar.addEventListener('mouseleave', function() {
+                sidebar.classList.remove('sidebar-open');
+                content.classList.remove('content-open');
             });
         });
-
     </script>
+
 </body>
 </html>

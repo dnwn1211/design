@@ -20,7 +20,7 @@
 }
 
 .content {
-    margin-left: 0; /* 사이드바가 닫혔을 때의 콘텐츠 영역의 초기 마진값 */
+    margin-left: 50px; /* 사이드바가 닫혔을 때의 콘텐츠 영역의 초기 마진값 */
     transition: margin-left 1s; /* 사이드바가 열리거나 닫힐 때 전환 효과 */
 }
 
@@ -74,8 +74,27 @@
     left: 0;
 }
 
-.sidebarMenu li:last-child:before {
-    height: auto;
-    top: 1em; /* (line-height/2) */
-    bottom: 0;
+.sub {
+    display: none;
 }
+
+.menu-item:hover .sub {
+    display: block;
+}
+
+/* .sub-item {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+}
+
+.menu-item:hover .sub-item {
+    display: block;
+} */
+
+
+/* .sidebarMenu li:last-child:before {
+    height: auto;
+    top: 1em;
+    bottom: 0;
+} */
