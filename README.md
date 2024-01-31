@@ -1,1 +1,1 @@
-css design 연습
+css design 연습에 + js 한꼬집..
