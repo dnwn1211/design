@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Sidebar</title>
+    <link rel="stylesheet" href="sidebar.css">
+</head>
+<body>
+    <!-- <button id="sidebar-toggle">Toggle Sidebar</button> -->
+
+    <div class="side-bar" id="sidebar">
+        <div class="sidebar-header">
+            Sidebar Header
+        </div>
+        <ul class="sidebarMenu">
+            <li><a href="#" class="menu-item">Menu Item 1</a>
+                <ul class="menu-itme sub">
+                    <li>sub item</li>
+                </ul>
+            </li>
+            <li><a href="#" class="menu-item">Menu Item 2</a></li>
+            <li><a href="#" class="menu-item">Menu Item 3</a></li>
+            <li><a href="#" class="menu-item">Menu Item 4</a></li>
+            <li><a href="#" class="menu-item">Menu Item 5</a></li>
+        </ul>
+    </div>
+
+    <div class="content" id="content">
+        <h1>Main입니다</h1>
+        <p>This is the main content area.</p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var sidebarToggle = document.getElementById('sidebar-toggle');
+            var sidebar = document.getElementById('sidebar');
+            var content = document.getElementById('content');
+
+            sidebarToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('sidebar-open');
+                content.classList.toggle('content-open');
+            });
+        });
+
+    </script>
+</body>
+</html>

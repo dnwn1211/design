@@ -11,7 +11,7 @@
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px; /* 페이지 상단에 고정되도록 수정 */
 }
 
 /* Styling the navigation box */
@@ -23,7 +23,6 @@
     color: #fff; /* Text color of the navbar */
     padding: 10px 20px; /* Padding around the navbar items */
     border-radius: 5px;
-
 }
 
 /* Styling the logo */
@@ -34,9 +33,10 @@
 
 /* Styling the navigation items */
 .nav-item {
-    font-size: 18px;
+    font-size: 20px;
     margin-left: 10px; /* Spacing between navigation items */
     cursor: pointer;
+    font-weight: bolder;
 }
 
 /* Styling the hover effect */

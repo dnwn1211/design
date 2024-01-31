@@ -1,0 +1,81 @@
+.side-bar {                               
+    background-color: lightgray;
+    position: absolute;
+    top: 0;
+    left: -150px; /* 초기 위치 */
+    width: 200px;
+    height: 100%;
+    transition: left 1s, background-color 2s;
+    opacity: 0.8;
+}
+
+.side-bar:hover {
+    left: 0;
+    background-color: black;
+    color: white;
+}
+
+.menu-item {
+    color: white;
+}
+
+.content {
+    margin-left: 0; /* 사이드바가 닫혔을 때의 콘텐츠 영역의 초기 마진값 */
+    transition: margin-left 1s; /* 사이드바가 열리거나 닫힐 때 전환 효과 */
+}
+
+.content-open {
+    margin-left: 200px; /* 사이드바가 열렸을 때의 콘텐츠 영역의 마진값 */
+}
+
+.sidebarMenu, 
+.sidebarMenu ul {
+    margin: 0 0 0 1em; /* indentation */
+    padding: 0;
+    list-style: none;
+    color: #369;
+    position: relative;
+    border-bottom: none;
+}
+
+.sidebarMenu ul {
+    margin-left: .5em;
+}
+
+.sidebarMenu:before,
+.sidebarMenu ul:before {
+    content: "";
+    display: block;
+    width: 3px; /* 선의 굵기 조정 */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #369; /* 선의 색상 */
+}
+
+.sidebarMenu li {
+    margin: 0;
+    padding: 0 1.5em; /* indentation + .5em */
+    line-height: 2em; /* default list item's `line-height` */    
+    font-weight: bold;
+    position: relative;
+}
+
+.sidebarMenu li:before {
+    content: "";
+    display: block;
+    width: 10px; /* same with indentation */
+    height: 0;
+    border-top: 1px solid;
+    margin-top: -1px; /* border top width */
+    position: absolute;
+    top: 1em; /* (line-height/2) */
+    left: 0;
+}
+
+.sidebarMenu li:last-child:before {
+    height: auto;
+    top: 1em; /* (line-height/2) */
+    bottom: 0;
+}

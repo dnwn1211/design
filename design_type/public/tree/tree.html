@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="tree.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p class="mainList">MainItem</p>
+        <ul class="list-group tree">
+            <li class="list-group-item toggle-folder" id="daejun">
+                <i class="bi bi-folder-fill"></i> Item 1
+                <ul class="list-subgroup">
+                    <li class="list-group-item sub"><i class="bi bi-folder-fill"></i> sub 1</li>
+                    <li class="list-group-item sub"><i class="bi bi-folder-fill"></i> sub 2</li>
+                    <li class="list-group-item sub"><i class="bi bi-folder-fill"></i> sub 3</li>
+                </ul>
+            </li>
+            <li class="list-group-item toggle-folder" id="sejong"> 
+                <i class="bi bi-folder-fill"></i> Item 2
+            </li>
+        </ul>
+    </div>
+    <div id="text-container"></div>
+
+    <script>
+        function toggleIconAndSubgroup(elementId) {
+            var element = document.getElementById(elementId);
+            var folderIcon = element.querySelector("i.bi");
+            var subItems = element.querySelector("ul.list-subgroup");
+
+            if (folderIcon.classList.contains("bi-folder-fill")) {
+                folderIcon.classList.remove("bi-folder-fill");
+                folderIcon.classList.add("bi-folder");
+                subItems.style.display = "block";
+            } else {
+                folderIcon.classList.remove("bi-folder");
+                folderIcon.classList.add("bi-folder-fill");
+                subItems.style.display = "none";
+            }
+        }
+
+        document.getElementById("daejun").addEventListener("click", function() {
+            toggleIconAndSubgroup("daejun");
+        });
+
+        document.getElementById("sejong").addEventListener("click", function() {
+            toggleIconAndSubgroup("sejong");
+        });
+    </script>
+</body>
+</html>
