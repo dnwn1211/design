@@ -23,6 +23,7 @@
     color: #fff; /* Text color of the navbar */
     padding: 10px 20px; /* Padding around the navbar items */
     border-radius: 5px;
+    box-shadow: 5px 2px 5px grey;
 }
 
 /* Styling the logo */
@@ -33,7 +34,7 @@
 
 /* Styling the navigation items */
 .nav-item {
-    font-size: 20px;
+    font-size: 16px;
     margin-left: 10px; /* Spacing between navigation items */
     cursor: pointer;
     font-weight: bolder;
@@ -42,4 +43,102 @@
 /* Styling the hover effect */
 .nav-item:hover {
     color: red;
+    box-shadow: 5px 3px 5px grey; 
 }
+
+.main_body {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: flex-start; 요소 사이의 여백을 최대화하여 가로로 배치합니다. */
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.first{
+    margin: 10px;
+    width: 130px;
+    height: 130px;
+    border: solid black 1px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-area : a; 
+}
+
+.login_box input {
+    width: 100px;
+    /* box-sizing: border-box; 내부 요소의 크기를 박스 모델에 맞춤 */
+    margin-bottom: 5px; /* 선택적으로 간격을 조정할 수 있음 */
+}
+
+.banner {
+    margin: 10px auto;
+    height: 300px;
+    width: 800px;
+    border: solid black 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+}
+.sub_header{
+    background: linear-gradient(deepSkyBlue, skyBlue, lightCyan);
+    color: black;
+    margin: 5px auto;
+    height: 20px;
+    width: 800px;
+    /* border: solid black 1px; */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+}
+.sub_name{
+    padding:5px;
+}
+.list_box {
+    margin: 10px auto;
+    height: 120px;
+    width: 800px;
+    border: solid black 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+}
+.list_item {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    border: solid black 1px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 기본 배경 색상 및 기타 스타일 */
+    background-color: rgb(255, 255, 255); /* 기본 배경 색상 */
+    transition: 0.5s;
+}
+
+.list_item:hover {
+    /* 그라데이션 효과를 가진 그림자 설정 */
+    background-image: linear-gradient(to bottom, rgba(4, 243, 56, 0.5), rgba(255, 255, 255, 0)); /* 그라데이션 효과 */
+    box-shadow: 5px 2px 5px grey; /* 그림자 효과 */
+}
+
+.end{
+    margin: 10px;
+    width: 130px;
+    height: 130px;
+    border: solid black 1px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-area : a; 
+}
+
