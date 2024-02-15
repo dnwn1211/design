@@ -110,6 +110,25 @@
     text-align: center;
     border-radius: 5px;
 }
+
+@keyframes shadowAnimation {
+    0% {
+        box-shadow: 5px 2px 5px red;
+    }
+    25% {
+        box-shadow: 5px 2px 5px orange;
+    }
+    50% {
+        box-shadow: 5px 2px 5px yellow;
+    }
+    75%{
+        box-shadow: 5px 2px 5px green;
+    }
+    100%{
+        box-shadow: 5px 2px 5px blue;
+    }
+}
+
 .list_item {
     margin: 10px;
     width: 100px;
@@ -121,14 +140,16 @@
     align-items: center;
     /* 기본 배경 색상 및 기타 스타일 */
     background-color: rgb(255, 255, 255); /* 기본 배경 색상 */
-    transition: 0.5s;
+    transition: 1s;
 }
 
 .list_item:hover {
-    /* 그라데이션 효과를 가진 그림자 설정 */
-    background-image: linear-gradient(to bottom, rgba(4, 243, 56, 0.5), rgba(255, 255, 255, 0)); /* 그라데이션 효과 */
-    box-shadow: 5px 2px 5px grey; /* 그림자 효과 */
+    background-image: linear-gradient(to bottom, rgba(4, 243, 56, 0.5), rgba(255, 255, 255, 0));
+    animation: shadowAnimation 10s infinite alternate;
+    transform: rotateX(45deg) rotateZ(45deg); /* Y 축을 기준으로 45도 회전하는 3D 효과 */
 }
+
+
 
 .end{
     margin: 10px;
