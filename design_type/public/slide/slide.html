@@ -6,9 +6,6 @@
     <title>Document</title>
     <style>
         .box {
-            width: 1200px;
-            height: 1200px;
-            background-color: rgb(120, 139, 133);
             margin: 0 auto; /* 가로 중앙 정렬을 위해 margin을 auto로 설정합니다. */
             position: relative; /* 포지션을 relative로 설정합니다. */
         }
@@ -22,25 +19,34 @@
             transition: top 1s ease; /* top 속성이 변할 때 부드럽게 애니메이션되도록 설정합니다. */
         }
         .list1 {
-            background-color: brown;
+            background-color: red;
             top: 0; /* 첫 번째 요소는 맨 위에 위치하도록 설정합니다. */
             overflow: hidden; /* 초과된 부분을 숨기기 위해 오버플로 속성을 설정합니다. */
         }
         .list2 {
-            background-color: rgb(134, 80, 80);
+            background-color: yellow;
             top: 40px; /* 두 번째 요소는 첫 번째 요소 아래 90px 위치에 위치하도록 설정합니다. */
         }
         .list3 {
-            background-color: blueviolet;
+            background-color: yellowgreen;
             top: 80px;
+        }
+        .listbox{
+            width: 100px;
+            height: 100px;
         }
     </style>
 </head>
 <body>
     <div class="box">
-        <div class="list1">1</div>
-        <div class="list2">2</div>
-        <div class="list3">3</div>
+        <div class="list1">자유게시판
+            <div class="listbox">1</div>
+            <div class="listbox">2</div>
+            <div class="listbox">3</div>
+            <div class="listbox">4</div>
+        </div>
+        <div class="list2">전공게시판</div>
+        <div class="list3">실시간게시판</div>
     </div>
 
     <script>
@@ -54,6 +60,25 @@
         });
 
         list1.addEventListener('mouseleave', () => {
+            list2.style.top = '40px';
+            list3.style.top = '80px';
+        });
+
+        list2.addEventListener('mouseenter', () => {
+            list2.style.top = '500px';
+            list3.style.top = '960px';
+        });
+
+        list2.addEventListener('mouseleave', () => {
+            list2.style.top = '40px';
+            list3.style.top = '80px';
+        });
+        list3.addEventListener('mouseenter', () => {
+            list2.style.top = '500px';
+            list3.style.top = '960px';
+        });
+
+        list3.addEventListener('mouseleave', () => {
             list2.style.top = '40px';
             list3.style.top = '80px';
         });
