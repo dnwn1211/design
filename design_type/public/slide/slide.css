@@ -1,0 +1,13 @@
+.box {
+    width: 1200px;
+    height: 1200px;
+    background-color: rgb(120, 139, 133);
+    margin: 0 auto; /* 가로 중앙 정렬을 위해 margin을 auto로 설정합니다. */
+    align-items: center;
+}
+.list{
+    width: 800px;
+    height: 500px;
+    background-color: brown;
+    margin: 10px auto;
+}

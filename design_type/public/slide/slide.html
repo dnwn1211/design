@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 1200px;
+            height: 1200px;
+            background-color: rgb(120, 139, 133);
+            margin: 0 auto; /* 가로 중앙 정렬을 위해 margin을 auto로 설정합니다. */
+            position: relative; /* 포지션을 relative로 설정합니다. */
+        }
+        .list1, .list2, .list3 {
+            width: 800px;
+            height: 500px;
+            position: absolute; /* 포지션을 absolute로 설정합니다. */
+            left: 50%; /* 가운데 정렬을 위해 left를 50%로 설정합니다. */
+            transform: translateX(-50%); /* left를 50%만큼 왼쪽으로 이동합니다. */
+            margin-top: 10px;
+            transition: top 1s ease; /* top 속성이 변할 때 부드럽게 애니메이션되도록 설정합니다. */
+        }
+        .list1 {
+            background-color: brown;
+            top: 0; /* 첫 번째 요소는 맨 위에 위치하도록 설정합니다. */
+            overflow: hidden; /* 초과된 부분을 숨기기 위해 오버플로 속성을 설정합니다. */
+        }
+        .list2 {
+            background-color: rgb(134, 80, 80);
+            top: 40px; /* 두 번째 요소는 첫 번째 요소 아래 90px 위치에 위치하도록 설정합니다. */
+        }
+        .list3 {
+            background-color: blueviolet;
+            top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="list1">1</div>
+        <div class="list2">2</div>
+        <div class="list3">3</div>
+    </div>
+
+    <script>
+        const list1 = document.querySelector('.list1');
+        const list2 = document.querySelector('.list2');
+        const list3 = document.querySelector('.list3');
+
+        list1.addEventListener('mouseenter', () => {
+            list2.style.top = '500px';
+            list3.style.top = '960px';
+        });
+
+        list1.addEventListener('mouseleave', () => {
+            list2.style.top = '40px';
+            list3.style.top = '80px';
+        });
+    </script>
+</body>
+</html>
