@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hover Nav</title>
+<style>
+/* Nav바 스타일 */
+.nav {
+    background-color: white;
+    color: #fff;
+    padding: 10px;
+}
+
+/* 하위 메뉴 스타일 */
+.sub-menu {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    padding: 10px;
+}
+
+/* 호버시 하위 메뉴 표시 */
+.nav:hover .sub-menu {
+    display: block;
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+    <ul>
+        <li>
+            <a href="#">메뉴1</a>
+            <ul class="sub-menu">
+                <li><a href="#">하위메뉴1-1</a></li>
+                <li><a href="#">하위메뉴1-2</a></li>
+                <li><a href="#">하위메뉴1-3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">메뉴2</a>
+            <ul class="sub-menu">
+                <li><a href="#">하위메뉴2-1</a></li>
+                <li><a href="#">하위메뉴2-2</a></li>
+                <li><a href="#">하위메뉴2-3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">메뉴3</a>
+            <ul class="sub-menu">
+                <li><a href="#">하위메뉴3-1</a></li>
+                <li><a href="#">하위메뉴3-2</a></li>
+                <li><a href="#">하위메뉴3-3</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<script>
+// JavaScript를 사용하여 호버된 메뉴 이외의 곳을 클릭했을 때 하위 메뉴를 숨김
+document.addEventListener("click", function(e) {
+    const nav = document.querySelector(".nav");
+    const targetElement = e.target;
+
+    // 호버된 메뉴가 아니거나 그 하위 메뉴가 아닌 경우에만 숨김
+    if (!targetElement.closest(".nav") || !targetElement.closest(".sub-menu")) {
+        const subMenus = nav.querySelectorAll(".sub-menu");
+        subMenus.forEach(menu => {
+            menu.style.display = "none";
+        });
+    }
+});
+</script>
+
+</body>
+</html>
