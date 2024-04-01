@@ -1,0 +1,78 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('cherry.jpg'); /* 배경 이미지 경로 설정 */
+  background-size: cover; /* 이미지가 창에 꽉 차도록 크기 조정 */
+  background-position: center; /* 이미지를 가운데로 정렬 */
+  font-family: Arial, sans-serif; /* 폰트 설정 */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.5); /* 흰색 배경에 투명도 적용 */
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+
+h2 {
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+label {
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.sign_up{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px
+}
+
+
+
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2adf39;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2b852f;
+}
