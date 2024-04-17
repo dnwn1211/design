@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>댓글창</title>
+  <link rel="stylesheet" href="comment.css">
+</head>
+<body>
+  <div class="comment-container">
+    <h2>댓글</h2>
+    <div class="comment-list" id="commentList">
+      <!-- 여기에 댓글이 들어갈 자리 -->
+    </div>
+    <form class="comment-form" id="commentForm">
+      <textarea id="commentInput" placeholder="댓글을 입력하세요"></textarea>
+      <button type="submit">댓글 작성</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('commentForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // 기본 제출 동작 방지
+
+    var commentInput = document.getElementById('commentInput');
+    var commentText = commentInput.value.trim(); // 입력된 댓글 내용
+
+    if (commentText !== '') { // 빈 댓글인지 확인
+      var commentList = document.getElementById('commentList');
+      var newComment = document.createElement('div');
+      newComment.classList.add('comment');
+      newComment.textContent = commentText;
+
+      // 새 댓글을 맨 위에 추가
+      commentList.insertBefore(newComment, commentList.firstChild);
+
+      // 입력란 초기화
+      commentInput.value = '';
+    }
+    });
+
+  </script>
+</body>
+</html>
