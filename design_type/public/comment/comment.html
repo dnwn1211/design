@@ -20,24 +20,25 @@
 
   <script>
     document.getElementById('commentForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // 기본 제출 동작 방지
+  event.preventDefault(); // 기본 제출 동작 방지
 
-    var commentInput = document.getElementById('commentInput');
-    var commentText = commentInput.value.trim(); // 입력된 댓글 내용
+  var commentInput = document.getElementById('commentInput');
+  var commentText = commentInput.value.trim(); // 입력된 댓글 내용
 
-    if (commentText !== '') { // 빈 댓글인지 확인
-      var commentList = document.getElementById('commentList');
-      var newComment = document.createElement('div');
-      newComment.classList.add('comment');
-      newComment.textContent = commentText;
+  if (commentText !== '') { // 빈 댓글인지 확인
+    var commentList = document.getElementById('commentList');
+    var newComment = document.createElement('div');
+    newComment.classList.add('comment');
+    newComment.textContent = commentText;
 
-      // 새 댓글을 맨 위에 추가
-      commentList.insertBefore(newComment, commentList.firstChild);
+    // 새 댓글을 맨 아래에 추가
+    commentList.appendChild(newComment);
 
-      // 입력란 초기화
-      commentInput.value = '';
-    }
-    });
+    // 입력란 초기화
+    commentInput.value = '';
+  }
+});
+
 
   </script>
 </body>
