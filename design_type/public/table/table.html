@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="table.css">
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+  
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+  
+    th {
+      background-color: #f2f2f2;
+    }
+  
+    #addRowBtn {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  
+    #addRowBtn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <table id="myTable">
+    <tr>
+      <th>항목1</th>
+      <th>항목2</th>
+      <th>항목3</th>
+      <th>항목4</th>
+    </tr>
+  </table>
+  
+  <button id="addRowBtn">항목 추가</button>
+  
+  <script>
+    // 항목 추가 버튼을 클릭했을 때 동작할 함수
+    document.getElementById('addRowBtn').addEventListener('click', function() {
+      // 테이블 요소 찾기
+      var table = document.getElementById('myTable');
+  
+      // 새로운 행 생성
+      var newRow = table.insertRow();
+  
+      // 행에 셀 추가
+      for (var i = 0; i < 4; i++) {
+        var cell = newRow.insertCell();
+        cell.appendChild(document.createTextNode('새로운 항목'));
+      }
+    });
+  </script>
+</body>
+</html>
