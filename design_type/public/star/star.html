@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="star.css">
+    <title>별점 입력 예시</title>
+    <style>
+        /* 여기에 추가적인 스타일링이 필요한 경우 작성합니다. */
+    </style>
+</head>
+<body>
+    <div class="modal">
+        <div class="modal_content">
+            <h3>강의평가 작성</h3>
+            <input type="number" min="0" max="5" step="1" id="starInput" placeholder="별점 입력 (0 ~ 5)" oninput="handleStarInput()"/>
+            
+            <!-- 별점 선택 -->
+            <div class='star-rating-container' id="starContainer">
+                <span class="star" onmouseover="handleStarHover(1)" onmouseout="handleStarHover(0)" onclick="handleStarClick(1)">★</span>
+                <span class="star" onmouseover="handleStarHover(2)" onmouseout="handleStarHover(0)" onclick="handleStarClick(2)">★</span>
+                <span class="star" onmouseover="handleStarHover(3)" onmouseout="handleStarHover(0)" onclick="handleStarClick(3)">★</span>
+                <span class="star" onmouseover="handleStarHover(4)" onmouseout="handleStarHover(0)" onclick="handleStarClick(4)">★</span>
+                <span class="star" onmouseover="handleStarHover(5)" onmouseout="handleStarHover(0)" onclick="handleStarClick(5)">★</span>
+            </div>
+            
+            <input type='text' name='professor' placeholder='교수명' />
+            <textarea name='script' placeholder='내용'></textarea>
+            <button onclick="handleAddReview()">저장</button>
+            <button onclick="handleCloseModal()">취소</button>
+        </div>
+    </div>
+
+    <!-- 여기에 별점 선택과 관련된 JavaScript 코드를 추가합니다. -->
+    <script>
+        let selectedStars = 0;
+
+        function handleStarClick(starValue) {
+            selectedStars = starValue;
+            updateStarInputValue(selectedStars);
+        }
+
+        function updateStarInputValue(value) {
+            document.getElementById('starInput').value = value;
+            const stars = document.querySelectorAll('.star');
+            stars.forEach((star, index) => {
+                if (index < value) {
+                    star.style.color = 'gold';
+                } else {
+                    star.style.color = '';
+                }
+            });
+        }
+
+        function handleStarInput() {
+            selectedStars = document.getElementById('starInput').value;
+            updateStarInputValue(selectedStars);
+        }
+
+        function handleAddReview() {
+            console.log("선택된 별점:", selectedStars);
+            // 리뷰 추가 처리 및 선택된 별점 사용을 여기에 추가합니다.
+        }
+
+        function handleCloseModal() {
+            console.log("모달 닫기 버튼이 클릭되었습니다.");
+            // 모달 닫기 처리를 여기에 추가합니다.
+        }
+    </script>
+</body>
+</html>
