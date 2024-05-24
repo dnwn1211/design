@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>시간표</title>
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  .highlight {
+    background-color: #ffcccb; /* 색상 변경 가능 */
+  }
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>시간</th>
+    <th>월요일</th>
+    <th>화요일</th>
+    <th>수요일</th>
+    <th>목요일</th>
+    <th>금요일</th>
+  </tr>
+  <tr>
+    <td>9:00 - 10:00</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>10:00 - 11:00</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>11:00 - 12:00</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>12:00 - 13:00</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>13:00 - 14:00</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>14:00 - 15:00</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>15:00 - 16:00</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const timetableData = [
+    {
+      "title": "수학의 이해",
+      "day": "Monday",
+      "time": "9:30 - 11:30"
+    },
+    {
+      "title": "과학 실험",
+      "day": "Wednesday",
+      "time": "13:00 - 15:00"
+    },
+    {
+      "title": "영어 회화",
+      "day": "Tuesday",
+      "time": "10:00 - 12:00"
+    },
+    {
+      "title": "역사 탐구",
+      "day": "Thursday",
+      "time": "14:00 - 16:00"
+    },
+    {
+      "title": "미술 수업",
+      "day": "Friday",
+      "time": "11:00 - 13:00"
+    }
+  ];
+
+  const dayToColumn = {
+    "Monday": 1,
+    "Tuesday": 2,
+    "Wednesday": 3,
+    "Thursday": 4,
+    "Friday": 5
+  };
+
+  const table = document.querySelector("table");
+
+  timetableData.forEach(data => {
+    const timeRange = data.time.split(" - ");
+    const startTime = timeRange[0];
+    const endTime = timeRange[1];
+
+    const startHour = parseInt(startTime.split(":")[0]);
+    const endHour = parseInt(endTime.split(":")[0]);
+    const startMinutes = parseInt(startTime.split(":")[1]);
+    const endMinutes = parseInt(endTime.split(":")[1]);
+
+    for (let hour = startHour; hour <= endHour; hour++) {
+      const row = table.rows[hour - 9 + 1];
+      if (!row) continue;
+      const cell = row.cells[dayToColumn[data.day]];
+      if (!cell) continue;
+      if (hour === startHour && startMinutes !== 0) {
+        cell.classList.add("highlight");
+        cell.textContent = `${data.title} (${startTime} - ${hour}:00)`;
+      } else if (hour === endHour && endMinutes !== 0) {
+        cell.classList.add("highlight");
+        cell.textContent = `${data.title} (${hour}:00 - ${endTime})`;
+      } else {
+        cell.classList.add("highlight");
+        cell.textContent = data.title;
+      }
+    }
+  });
+});
+</script>
+
+</body>
+</html>
